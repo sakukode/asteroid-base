@@ -1,0 +1,67 @@
+<template name="menu_view">
+    <section class="content-header">
+        <h1>Menu - View</h1>
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="/admin/menu">Menu</a></li>
+            <li class="active">view</li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <div class="box">
+            {{#with model}}
+            <div class="box-header">
+                <div class="toolbar">
+                    <h3 class="pull-left">Rincian Menu - {{name}}</h3>
+                    <div class="toolbar pull-right">
+                        <a href="/admin/menu" class="btn btn-default">Back</a>                      
+                    </div>
+                </div>
+            </div>
+            <div class="box-body">                                
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><b>Name</b></td>
+                            <td>{{name}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Url</b></td>
+                            <td>{{url}}</td>
+                        </tr>                         
+                        <tr>
+                            <td><b>Created at</b></td>
+                            <td>{{asteroid_formatter "dateTime" createdAt}}</td>
+                        </tr>                 
+                    </tbody>
+                </table>                         
+            </div>
+
+            <div class="box-body">
+                <h3>Child Menu</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Url</th>                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each childs}}
+                        <tr>                            
+                            <td>{{name}}</td>
+                            <td>{{url}}</td>                            
+                        </tr>
+                        {{else}}
+                            <tr>
+                                <td colspan="2">No child</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            {{/with}} 
+        </div>
+    </section>   
+</template>

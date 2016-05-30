@@ -1,0 +1,15 @@
+<template name="adminlte_mainLayout">
+    {{#AdminLTE skin=blue fixed="fixed" sidebarMini="sidebar-mini"}}  
+    {{> adminlte_header}}
+    {{> adminlte_sidebar}}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">        
+        <!-- Main content -->
+        {{> Template.dynamic template=content}}
+    </div><!-- /.content-wrapper -->                
+    {{> sAlert}}
+    {{> adminlte_footer}}
+    {{> adminlte_controlSidebar}}
+    {{/AdminLTE}}
+</template>
