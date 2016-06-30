@@ -45,7 +45,6 @@ FindFromPublication.publish('checkUsers', function(criteria, skipCount, sortFiel
   criteria['_id'] = {$ne: loggedInUserId};
 
   return Meteor.users.find(criteria, {
-    fields: {'profile.name': 1},
     limit: 1,
     skip: skipCount,
     sort: AsteroidSorting.get(sortField, sortDirection)

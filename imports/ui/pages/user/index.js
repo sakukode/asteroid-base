@@ -117,8 +117,6 @@ var hasMorePages = function() {
         AsteroidSorting.getSortDirection())
     }).fetch();
 
-  console.log(models)
-
 	return models.length > 0 ? AsteroidSorting.getCurrentPage() * parseInt(15) : false;
 };
 
